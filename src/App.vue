@@ -24,6 +24,7 @@
     <info />
     <individ />
     <entity/>
+    <ask/>
   </div>
 </template>
 
@@ -50,7 +51,7 @@ body {
   margin-left: 10px;
 }
 .hrefheader a{
-margin-right: 60px;
+  margin-right: 40px;
 }
 .header {
   display: flex;
@@ -134,11 +135,14 @@ margin-right: 60px;
 import info from './components/info.vue';
 import individ from './components/individ.vue';
 import entity from './components/entity.vue';
+import ask from './components/ask.vue';
+
 export default {
   components: {
     info,
     individ,
     entity,
+    ask,
   },
   data() {
     return {
