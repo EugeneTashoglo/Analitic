@@ -1,34 +1,35 @@
 <template>
-  <section class="upsection">
-    <header class="header">
-      <div class="hrefheader">
-        <img class="imglogo" :src="logoSrc" :alt="logoAlt">
-        <a :href="link1">главная</a>
-        <a :href="link2">о компании</a>
-        <a :href="link3">услуги</a>
-        <a :href="link4">контакты</a>
-        <div class="number">
-        {{ phoneNumber }}
-      </div>
-         <div class="profile">
-        <img  :src="profileImgSrc" :alt="profileImgAlt">
-        <button>{{ loginText }}</button>
-      </div>  
-      </div>
-      <div class="maininfo">
-    <h1>ПРОФЕССИОНАЛЬНАЯ <br> ПОМОЩЬ В РЕШЕНИИ<br>  ЮРИДИЧЕСКИХ ПРОБЛЕМ</h1>
-    <h2>ЭФФЕКТИВНОЕ БУХГАЛТЕРСКОЕ ОБСЛУЖИВАНИЕ</h2>
-    <button>ОСТАВИТЬ ЗАЯВКУ</button>
+  <div>
+    <section class="upsection">
+      <header class="header">
+        <div class="hrefheader">
+          <img class="imglogo" :src="logoSrc" :alt="logoAlt">
+          <a :href="link1">главная</a>
+          <a :href="link2">о компании</a>
+          <a :href="link3">услуги</a>
+          <a :href="link4">контакты</a>
+          <div class="number">{{ phoneNumber }}</div>
+          <div class="profile">
+            <img :src="profileImgSrc" :alt="profileImgAlt">
+            <button>{{ loginText }}</button>
+          </div>
+        </div>
+        <div class="maininfo">
+          <h1>ПРОФЕССИОНАЛЬНАЯ <br> ПОМОЩЬ В РЕШЕНИИ<br> ЮРИДИЧЕСКИХ ПРОБЛЕМ</h1>
+          <h2>ЭФФЕКТИВНОЕ БУХГАЛТЕРСКОЕ ОБСЛУЖИВАНИЕ</h2>
+          <button>ОСТАВИТЬ ЗАЯВКУ</button>
+        </div>
+      </header>
+    </section>
+    <info />
+    <individ />
+    <entity/>
   </div>
-    </header>
-  </section>
-  <section class="info">
-
-  </section>
 </template>
 
+
 <!-- Стили -->
-<style>
+<style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
 body {
   font-family: 'Source Serif 4', serif;
@@ -125,10 +126,20 @@ margin-right: 60px;
   color: white;
   background-color: #970E0E;
 }
+
 </style>
 <!-- Скрипты -->
-<script >
+<script>
+// Импортируем ваши компоненты
+import info from './components/info.vue';
+import individ from './components/individ.vue';
+import entity from './components/entity.vue';
 export default {
+  components: {
+    info,
+    individ,
+    entity,
+  },
   data() {
     return {
       logoSrc: 'src/assets/header/logo.png',
