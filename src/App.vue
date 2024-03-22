@@ -1,16 +1,16 @@
 <template>
   <div>
-    <section class="upsection">
-      <header class="header">
+    <section class="upsection"  draggable="false">
+      <header class="header" id="#header">
         <div class="hrefheader">
-          <img class="imglogo" :src="logoSrc" :alt="logoAlt">
+          <img  class="imglogo" :src="logoSrc" :alt="logoAlt"  draggable="false">
           <a :href="link1">главная</a>
           <a :href="link2">о компании</a>
           <a :href="link3">услуги</a>
           <a :href="link4">контакты</a>
           <div class="number">{{ phoneNumber }}</div>
           <div class="profile">
-            <img :src="profileImgSrc" :alt="profileImgAlt">
+            <img :src="profileImgSrc" :alt="profileImgAlt"  draggable="false">
             <button>{{ loginText }}</button>
           </div>
         </div>
@@ -25,18 +25,28 @@
     <individ />
     <entity/>
     <ask/>
+    <contacts/>
+ <footername/>
+
   </div>
 </template>
 
 
 <!-- Стили -->
-<style scoped>
+<style >
 @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
 body {
   font-family: 'Source Serif 4', serif;
   margin: 0px;
   padding: 0px;
 }
+img {
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* стандартное свойство */
+}
+
 .upsection {
   height: 110vh; 
   background-image: url('src/assets/header/main_bg.png');
@@ -50,9 +60,13 @@ body {
   align-items: center; 
   margin-left: 10px;
 }
-.hrefheader a{
+.hrefheader a {
   margin-right: 40px;
 }
+.hrefheader a:hover {
+  color: white; /* Устанавливаем белый цвет текста при наведении на ссылку */
+}
+
 .header {
   display: flex;
   flex-direction: column; 
@@ -78,6 +92,12 @@ body {
   border-radius: 5px;
   color: white;
   background-color: #970E0E;
+  transition:  background-color 0.3s;;
+cursor: pointer;
+}
+.profile button:hover {
+  background-color: #750b0b;
+
 }
 .imglogo{
   margin-left: 100px;
@@ -126,8 +146,12 @@ body {
   border-radius: 10px;
   color: white;
   background-color: #970E0E;
+  transition:  background-color 0.3s;;
 }
+.maininfo button:hover{
+  background-color: #750b0b;
 
+}
 </style>
 <!-- Скрипты -->
 <script>
@@ -136,6 +160,8 @@ import info from './components/info.vue';
 import individ from './components/individ.vue';
 import entity from './components/entity.vue';
 import ask from './components/ask.vue';
+import contacts from './components/contacts.vue';
+import footername from './components/footername.vue';
 
 export default {
   components: {
@@ -143,15 +169,18 @@ export default {
     individ,
     entity,
     ask,
+    contacts,
+    footername,
+
   },
   data() {
     return {
       logoSrc: 'src/assets/header/logo.png',
       logoAlt: 'Company Logo',
-      link1: 'https://example.com/link1',
-      link2: 'https://example.com/link2',
-      link3: 'https://example.com/link3',
-      link4: 'https://example.com/link4',
+      link1: '#header',
+      link2: '#info',
+      link3: '#service',
+      link4: '#footers',
       phoneNumber: '+7 (4012) 37-72-97',
       profileImgSrc: 'src/assets/header/UserAccount.png',
       profileImgAlt: 'Profile Picture',

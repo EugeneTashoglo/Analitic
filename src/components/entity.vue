@@ -1,12 +1,12 @@
 <template>
     <div class="services-section">
       <div class="services-header">
-        <img class="services-logo" :src="sectionLogo" alt="Services Logo">
+        <img class="services-logo" :src="sectionLogo" alt="Services Logo"  draggable="false">
         <h2>{{ sectionTitle }}</h2>
       </div>
       <div class="services-grid">
         <div v-for="(service, index) in services" :key="index" class="service-item">
-          <img :src="service.image" :alt="'Service ' + (index + 1) + ' Logo'" class="service-image" :style="{ width: imageSize, height: 'auto' }">
+          <img  draggable="false" :src="service.image" :alt="'Service ' + (index + 1) + ' Logo'" class="service-image" :style="{ width: imageSize, height: 'auto' }">
           <p :style="{ fontSize: textSize + 'px' }">{{ service.name }}</p>
           <p v-if="showPrice[index]" class="service-price show">{{ service.price }}</p>
           <p v-else class="service-price">{{ service.price }}</p>
@@ -91,6 +91,8 @@
 
 
   .services-section {
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.6);
+
     height: 800px;
     display: flex;
     flex-direction: column;
@@ -158,6 +160,8 @@
     color: white;
     background-color: #970E0E;
     cursor: pointer;
+  transition:  background-color 0.3s;;
+
   }
   
   .price-button:hover {
