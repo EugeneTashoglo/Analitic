@@ -152,6 +152,7 @@ cursor: pointer;
   background-color: #750b0b;
 
 }
+
 </style>
 <!-- Скрипты -->
 <script>

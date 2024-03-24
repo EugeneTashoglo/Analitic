@@ -20,10 +20,10 @@
       </div>
     </div>
   </div>
-</template>
+</template>  
 
 <script>
-export default {
+export default { 
   data() {
     return {
       imageSrc: "src/assets/section_ask/ask_me_img.png",
