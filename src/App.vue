@@ -1,5 +1,23 @@
 <template>
   <div>
+  
+    <input class="side-menu" type="checkbox" id="side-menu"/>
+    <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+    <!-- Menu -->
+    <nav class="nav">
+  
+      <ul class="menu">
+        <li><a href="#">главная</a></li>
+        <li><a href="#">о компании</a> </li>
+        <li><a href="#">услуги</a></li>
+        <li><a href="#">контакты</a></li>
+        <div class="profile">
+          <img :src="profileImgSrc" :alt="profileImgAlt"  draggable="false">
+          <button>{{ loginText }}</button>
+        </div>
+      </ul>
+    </nav>
+
     <section class="upsection"  draggable="false">
       <header class="header" id="#header">
         <div class="hrefheader">
@@ -21,6 +39,7 @@
         </div>
       </header>
     </section>
+    <div class="none">
     <info />
     <individ />
     <entity/>
@@ -28,6 +47,7 @@
     <contacts/>
  <footername/>
 
+  </div>
   </div>
 </template>
 
@@ -39,6 +59,9 @@ body {
   font-family: 'Source Serif 4', serif;
   margin: 0px;
   padding: 0px;
+}
+.menu,.nav,.side-menu,.hamb{
+  display: none;
 }
 img {
   -webkit-user-select: none; /* Safari */
@@ -66,7 +89,6 @@ img {
 .hrefheader a:hover {
   color: white; /* Устанавливаем белый цвет текста при наведении на ссылку */
 }
-
 .header {
   display: flex;
   flex-direction: column; 
@@ -150,6 +172,159 @@ cursor: pointer;
 }
 .maininfo button:hover{
   background-color: #750b0b;
+
+}
+@media only screen and (max-width: 767px) {
+  .none{
+  display: none;
+}
+.menu,.nav,.side-menu,.hamb{
+  display: block;
+}
+:root{
+    --white: #f9f9f9;
+    --yellow: #FEF9ED;
+    --brown: #3D210B;
+} /* variables*/
+ 
+/* Reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--white);
+    font-family: "Poppins", sans-serif;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+.nav{
+    width: 50%;
+    position: fixed;
+    background-color: var(--yellow);
+    overflow: hidden;
+   
+}
+.menu a{
+  font-size: 13px;
+    display: block;
+    padding: 5px;
+    color: var(--brown);
+}
+.nav{
+    max-height: 0;
+}
+.hamb{
+    cursor: pointer;
+    float: right;
+    background-color: #970E0E;
+}
+.hamb-line {
+    background: var(--white);
+    display: block;
+    height: 2px;
+    position: relative;
+    width: 24px;
+
+} 
+.hamb-line::before,
+.hamb-line::after{
+    background: var(--white);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+.hamb-line::before{
+    top: 5px;
+}
+.hamb-line::after{
+    top: -5px;
+}
+.side-menu {
+    display: none;
+} 
+.hamb{
+    cursor: pointer;
+    float: right;
+    padding: 45px 20px;
+    margin-right: 40px;
+}
+ 
+.hamb-line {
+    background: var(--white);
+    display: block;
+    height: 2px;
+    position: relative;
+    width: 24px;
+ 
+} 
+ 
+.hamb-line::before,
+.hamb-line::after{
+    background: var(--white);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+.hamb-line::before{
+    top: 5px;
+}
+.hamb-line::after{
+    top: -5px;
+}
+ 
+.side-menu {
+    display: none;
+} 
+
+/* Toggle menu icon */
+.side-menu:checked ~ nav{
+    max-height: 100%;
+}
+.side-menu:checked ~ .hamb .hamb-line {
+    background: transparent;
+}
+.side-menu:checked ~ .hamb .hamb-line::before {
+    transform: rotate(-45deg);
+    top:0;
+}
+.side-menu:checked ~ .hamb .hamb-line::after {
+    transform: rotate(45deg);
+    top:0;
+}
+.nav{
+        position: relative;
+        float: right;
+    }
+  
+.hrefheader{
+  display: none;
+
+}
+  .upsection {
+    background-image: url(src/assets/header/iPhone-back.png);
+    height: 668px;
+width: 100%;
+  }
+
+  .maininfo{
+  }
+  .number{
+    display: none;
+  }
+  .hrefheader{
+  }
 
 }
 
