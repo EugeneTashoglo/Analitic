@@ -1,12 +1,11 @@
 <template>
   <div>
-  
     <input class="side-menu" type="checkbox" id="side-menu"/>
     <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
     <!-- Menu -->
     <nav class="nav">
-  
       <ul class="menu">
+        
         <li><a href="#">главная</a></li>
         <li><a href="#">о компании</a> </li>
         <li><a href="#">услуги</a></li>
@@ -17,7 +16,6 @@
         </div>
       </ul>
     </nav>
-
     <section class="upsection"  draggable="false">
       <header class="header" id="#header">
         <div class="hrefheader">
@@ -39,13 +37,17 @@
         </div>
       </header>
     </section>
-    <div class="none">
     <info />
     <individ />
     <entity/>
     <ask/>
     <contacts/>
- <footername/>
+    <footername/>
+    <div class="none">
+
+
+
+
 
   </div>
   </div>
@@ -174,6 +176,14 @@ cursor: pointer;
   background-color: #750b0b;
 
 }
+
+
+
+
+
+
+
+
 @media only screen and (max-width: 767px) {
   .none{
   display: none;
@@ -203,27 +213,35 @@ a{
 ul{
     list-style: none;
 }
-.nav{
-    width: 50%;
-    position: fixed;
-    background-color: var(--yellow);
-    overflow: hidden;
-   
+.nav {
+  width: 50%;
+  position: fixed;
+  background-color: var(--yellow);
+  overflow: hidden;
+  border: 1px solid #3D210B; /* Добавляем обводку */
+  border-radius: 0  0  0 20px; /* Закругляем только левый нижний угол */
 }
+
 .menu a{
   font-size: 13px;
     display: block;
-    padding: 5px;
+    padding-left: 5px;
+    padding: 10px;
     color: var(--brown);
 }
 .nav{
     max-height: 0;
 }
-.hamb{
-    cursor: pointer;
-    float: right;
-    background-color: #970E0E;
+.hamb {
+  cursor: pointer;
+  position: absolute; /* Добавляем абсолютное позиционирование */
+  top: 0; /* Выравниваем кнопку по верху nav */
+  right: 20px; /* Выравниваем кнопку по правому краю nav */
+  padding: 45px 20px;
+  background-color: #970E0E;
+  z-index: 999; /* Устанавливаем высокий z-index, чтобы кнопка была поверх других элементов */
 }
+
 .hamb-line {
     background: var(--white);
     display: block;
@@ -251,12 +269,7 @@ ul{
 .side-menu {
     display: none;
 } 
-.hamb{
-    cursor: pointer;
-    float: right;
-    padding: 45px 20px;
-    margin-right: 40px;
-}
+
  
 .hamb-line {
     background: var(--white);
@@ -269,7 +282,7 @@ ul{
  
 .hamb-line::before,
 .hamb-line::after{
-    background: var(--white);
+  background: var(--white);
     content: '';
     display: block;
     height: 100%;
@@ -315,17 +328,35 @@ ul{
   .upsection {
     background-image: url(src/assets/header/iPhone-back.png);
     height: 668px;
-width: 100%;
+   width: 100%;
   }
 
   .maininfo{
+      margin-top: 70px;
+     margin-left: 1000px;
+     font-size: 2px;
   }
+  .maininfo h1{
+
+     font-size: 20px;
+  }
+  .maininfo h2{
+
+     font-size: 13px;
+  }
+  .maininfo button{
+height: 56px;
+width: 160px;
+font-size: 13px;
+}
   .number{
     display: none;
   }
   .hrefheader{
   }
-
+ .profile{
+  margin-bottom: 10px;
+ }
 }
 
 </style>

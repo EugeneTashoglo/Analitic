@@ -174,4 +174,8 @@ input {
 .push h2 {
   color: white;
 }
+@media only screen and (max-width: 767px) {
+  
+}
+
 </style>

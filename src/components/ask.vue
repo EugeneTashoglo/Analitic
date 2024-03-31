@@ -108,6 +108,53 @@ text-align: center;
   background-color: #750b0b;
 
 }
+@media only screen and (max-width: 767px) {
+  .container {
+    flex-direction: column; /* меняем направление flex на вертикальное */
+    align-items: center; /* выравниваем элементы по центру */
+  }
+
+  .left-image {
+    width: 100%; /* уменьшаем ширину изображения */
+    max-width: 300px; /* устанавливаем максимальную ширину для поддержки соотношения сторон */
+    height: auto; /* автоматический расчет высоты для поддержки соотношения сторон */
+    margin-bottom: 20px; /* добавляем отступ снизу */
+  }
+
+  .form-container {
+    width: 80%; /* уменьшаем ширину контейнера */
+  }
+
+  .form-container h2 {
+    font-size: 34px; 
+    margin-top: 10px;
+  }
+
+  .form-container p {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 12px; /* уменьшаем размер текста */
+  }
+
+  .input-field {
+    width: 100%; /* уменьшаем ширину инпутов */
+    max-width: 300px; /* устанавливаем максимальную ширину */
+    font-size: 15px; /* уменьшаем размер шрифта */
+  }
+
+  .politic p {
+    font-size: 12px; /* уменьшаем размер текста */
+  }
+
+  .politic button {
+    width: 80%; /* уменьшаем ширину кнопки */
+    max-width: 200px; /* устанавливаем максимальную ширину */
+    font-size: 18px; /* уменьшаем размер шрифта */
+    height: 50px; /* уменьшаем высоту кнопки */
+    margin-top: 10px; /* увеличиваем отступ сверху */
+  }
+}
+
 
 /* Дополнительные стили по необходимости */
 </style>

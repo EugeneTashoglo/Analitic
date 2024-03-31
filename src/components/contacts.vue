@@ -55,6 +55,7 @@
   }
   
   .content {
+    text-align: center;
     flex: 1;
     margin-right: 20px;
     display: flex;
@@ -104,5 +105,67 @@
     width: 500px;
     height: 400px;
   }
+  @media only screen and (max-width: 767px) {
+    .content {
+    flex-direction: column; /* Меняем направление flex на вертикальное */
+    align-items: center; /* Центрируем элементы по центру */
+  }
+
+  .right-image {
+    order: -1; /* Помещаем изображение вверху */
+  margin-bottom: 20px;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .content {
+    flex: 1;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contacts h2 {
+    font-size: 28px; /* Уменьшаем размер заголовка */
+    margin-bottom: 20px;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s;
+  }
+
+  .contact-item:hover {
+    transform: scale3d(1.1, 1.1, 1.1); /* Увеличиваем размер при наведении */
+  }
+
+  .contact-item a {
+    margin-top: 20px;
+    font-size: 14px; /* Уменьшаем размер текста */
+  }
+
+  .contact-item img {
+    margin-right: 5px; /* Уменьшаем отступ между изображением и текстом */
+  }
+
+  .right-image {
+    width: 100%; /* Уменьшаем ширину изображения */
+    max-width: 300px; /* Устанавливаем максимальную ширину для поддержки соотношения сторон */
+    height: auto; /* Автоматический расчет высоты для поддержки соотношения сторон */
+    margin-top: 100px; /* Добавляем отступ сверху */
+  }
+
+  .map {
+    width: auto; /* Уменьшаем ширину карты */
+    height: auto; /* Автоматический расчет высоты для поддержки соотношения сторон */
+  }
+}
+
+
   </style>
   

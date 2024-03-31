@@ -19,6 +19,14 @@
   <script>
   export default {
     data() {
+    let imageSizeDesktop = '100px';
+    let textSizeDesktop = 24;
+
+    if (window.innerWidth <= 767) {
+      imageSizeDesktop = '50px';
+      textSizeDesktop = 18;
+    }
+
       return {
         sectionTitle: "Физическим лицам",
         sectionLogo: "src/assets/section_individ/section_logo.png",
@@ -31,26 +39,40 @@
           { image: "src/assets/section_individ/prava_potreb.png", name: "Защита прав потребителей", price: "договорная цена" },
         ],
         priceButtonText: "Прайс",
-        imageSize: '100px',
-        textSize: 24,
+        imageSize: imageSizeDesktop,
+        textSize: textSizeDesktop,
         isSmall: false, // флаг для отслеживания состояния кнопки
         showPrice: Array(6).fill(false), // Initialize an array to track whether price is shown for each service
       };
     },
+    created() {
+    window.addEventListener('resize', this.toggleSize);
+  },
+  destroyed() {
+    window.removeEventListener('resize', this.toggleSize);
+  },
     methods: {
-      toggleSize() {
-        this.isSmall = !this.isSmall; // изменяем состояние кнопки
-        if (this.isSmall) {
-          this.imageSize = '50px'; // изменяем размер изображений
-          this.textSize = 18; // изменяем размер текста
-        } else {
-          this.imageSize = '100px'; // возвращаем начальный размер изображений
-          this.textSize = 24; 
-        }
+    toggleSize() {
+      if (window.innerWidth <= 767) {
+        this.toggleMobileSize();
+      } else {
+        this.isSmall = !this.isSmall;
+        this.imageSize = this.isSmall ? '50px' : '100px';
+        this.textSize = this.isSmall ? 18 : 24;
         setTimeout(() => {
           this.showPrice = this.showPrice.map(val => !val);
-        }, 0); 
+        }, 0);
       }
+    },
+    toggleMobileSize() {
+      this.isSmall = !this.isSmall;
+      this.imageSize = this.isSmall ? '25px' : '50px';
+      this.textSize = this.isSmall ? 13 : 15;
+      
+      setTimeout(() => {
+        this.showPrice = this.showPrice.map(val => !val);
+      }, 0);
+    }
     }
   };
   </script>
@@ -175,6 +197,33 @@
 @keyframes fadeOut {
   0% { opacity: 1; }
   100% { opacity: 0;  }
+}
+@media only screen and (max-width: 767px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr); /* Изменяем на два блока в ширину */
+  }
+.service-item {
+    width: 140px; /* Устанавливаем новую ширину блока service-item */
+    height: 120px; /* Устанавливаем новую высоту блока service-item */
+  }
+  .service-price {
+    font-size: 12px; /* Устанавливаем меньший размер шрифта для мобильной версии */
+  }
+  .services-header h2 {
+    font-size: 25px;
+
+  }
+  .services-logo {
+    width: 80px;
+    height: 67px;
+    margin-bottom: 20px;
+  }
+  .price-button{
+    margin-top: 50px;
+  }
+  .services-header{
+    margin-bottom: 70px;
+  }
 }
   </style>
   
