@@ -175,7 +175,72 @@ input {
   color: white;
 }
 @media only screen and (max-width: 767px) {
-  
+  /* Стили для мобильных устройств */
+  footer img {
+    width: 220px;
+    height: 55px;
+  }
+
+  .footer-info {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .link {
+    margin: 20px 0;
+    text-align: center;
+  }
+
+  .href {
+    margin: 20px 0;
+  }
+
+  .numbers {
+    margin: 20px 0;
+  }
+
+  .push {
+    margin: 20px 0;
+  }
+
+  .push h2 {
+    font-size: 15px;
+  }
+
+  input {
+    border-radius: 5px;
+    height: 40px;
+    width: 150px;
+  }
+
+  .politic a {
+    font-size: 12px;
+  }
+
+  .politic p {
+    font-size: 12px;
+  }
+
+  .icons img {
+    height: 20px;
+    width: 20px;
+  }
+
+  .href a {
+    font-size: 10px;
+  }
+
+  .numbers a {
+    font-size: 10px;
+  }
+
+  .push button {
+    height: 40px;
+    width: 75px;
+    font-size: 10px;
+  }
 }
+
+
 
 </style>
