@@ -44,16 +44,9 @@
     <contacts/>
     <footername/>
     <div class="none">
-
-
-
-
-
   </div>
   </div>
 </template>
-
-
 <!-- Стили -->
 <style >
 @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
@@ -384,8 +377,8 @@ export default {
     return {
       logoSrc: 'src/assets/header/logo.png',
       logoAlt: 'Company Logo',
-      link1: '#header',
-      link2: '#info',
+      link1: 'SignIn',
+      link2: 'LogIn',
       link3: '#service',
       link4: '#footers',
       phoneNumber: '+7 (4012) 37-72-97',
